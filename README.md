@@ -4,6 +4,12 @@
 
 参考英文原文：Update 04/22/2015 在`Xcode 6.4`中进行编码测试，解决原文中出现的问题，保证了语句与Demo的可用性
 
+在线阅读: http://swift-design-patterns.books.yourtion.com/
+
+下载电子书: https://www.gitbook.com/book/yourtion/swiftdesignpatterns/details
+
+**有修改建议优化，请直接Fork：<https://github.com/yourtion/SwiftDesignPatterns/> 进行修改并申请 Pull Request。**
+
 ## 更新声明
 
 本书整理排版自：
