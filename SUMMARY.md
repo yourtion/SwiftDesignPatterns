@@ -1,7 +1,7 @@
 * [iOS 设计模式](./Chapter01/iOS-Design-Patterns.md)
 * [开始](./Chapter02/GettingStarted.md)
-* 设计模式之王 - MVC
-  * 如何使用 MVC 模式
+* [设计模式之王 - MVC](./Chapter03/MVC.md)
+  * [如何使用 MVC 模式](./Chapter03/Use-MVC.md)
 * 单例模式 - Singleton
   * 如何使用单例模式
 * 外观模式 - Facade
