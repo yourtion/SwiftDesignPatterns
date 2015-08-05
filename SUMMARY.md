@@ -2,8 +2,8 @@
 * [开始](./Chapter02/GettingStarted.md)
 * [设计模式之王 - MVC](./Chapter03/MVC.md)
   * [如何使用 MVC 模式](./Chapter03/Use-MVC.md)
-* 单例模式 - Singleton
-  * 如何使用单例模式
+* [单例模式 - Singleton](./Chapter04/Singleton.md)
+  * [如何使用单例模式](./Chapter04/Use-Singleton.md)
 * 外观模式 - Facade
   * 如何使用外观模式
 * 装饰者模式 - Decorator
