@@ -4,8 +4,8 @@
   * [如何使用 MVC 模式](./Chapter03/Use-MVC.md)
 * [单例模式 - Singleton](./Chapter04/Singleton.md)
   * [如何使用单例模式](./Chapter04/Use-Singleton.md)
-* 外观模式 - Facade
-  * 如何使用外观模式
+* [外观模式 - Facade](./Chapter05/Facade.md)
+  * [如何使用外观模式](./Chapter05/Use-Facade.md)
 * 装饰者模式 - Decorator
   * 扩展
   * 如何使用扩展
