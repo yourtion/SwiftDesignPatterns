@@ -6,11 +6,11 @@
   * [如何使用单例模式](./Chapter04/Use-Singleton.md)
 * [外观模式 - Facade](./Chapter05/Facade.md)
   * [如何使用外观模式](./Chapter05/Use-Facade.md)
-* 装饰者模式 - Decorator
-  * 扩展
-  * 如何使用扩展
-  * 委托
-  * 如何使用委托模式
+* [装饰者模式 - Decorator](./Chapter06/Decorator.md)
+  * [扩展](./Chapter06/Decorator-Extension.md)
+  * [如何使用扩展](./Chapter06/Use-Decorator-Extension.md)
+  * [委托](./Chapter06/Decorator-Delegation.md)
+  * [如何使用委托模式](./Chapter06/Use-Decorator-Delegation.md)
 * 适配器模式 - Adapter
   * 如何使用适配器模式
 * 观察者模式 - Observer
