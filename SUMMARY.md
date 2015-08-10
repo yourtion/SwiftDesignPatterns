@@ -11,8 +11,8 @@
   * [如何使用扩展](./Chapter06/Use-Decorator-Extension.md)
   * [委托](./Chapter06/Decorator-Delegation.md)
   * [如何使用委托模式](./Chapter06/Use-Decorator-Delegation.md)
-* 适配器模式 - Adapter
-  * 如何使用适配器模式
+* [适配器模式 - Adapter](./Chapter07/Adapter.md)
+  * [如何使用适配器模式](./Chapter07/Use-Adapter.md)
 * 观察者模式 - Observer
   * 通知 - Notification
   * 键值观察 - KVO
