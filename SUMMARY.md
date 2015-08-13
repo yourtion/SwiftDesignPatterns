@@ -13,9 +13,9 @@
   * [如何使用委托模式](./Chapter06/Use-Decorator-Delegation.md)
 * [适配器模式 - Adapter](./Chapter07/Adapter.md)
   * [如何使用适配器模式](./Chapter07/Use-Adapter.md)
-* 观察者模式 - Observer
-  * 通知 - Notification
-  * 键值观察 - KVO
+* [观察者模式 - Observer](./Chapter08/Observer.md)
+  * [通知 - Notification](./Chapter08/Notification.md)
+  * [键值观察 - KVO](./Chapter08/KVO.md)
 * 备忘录模式 - Memento
   * 如何使用备忘录模式
   * 归档 - Archiving
