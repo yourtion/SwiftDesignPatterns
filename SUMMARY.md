@@ -16,8 +16,8 @@
 * [观察者模式 - Observer](./Chapter08/Observer.md)
   * [通知 - Notification](./Chapter08/Notification.md)
   * [键值观察 - KVO](./Chapter08/KVO.md)
-* 备忘录模式 - Memento
-  * 如何使用备忘录模式
-  * 归档 - Archiving
+* [备忘录模式 - Memento](./Chapter09/Memento.md)
+  * [如何使用备忘录模式](./Chapter09/Use-Memento.md)
+  * [归档 - Archiving](./Chapter09/Archiving.md)
 * 最后的润色
 * 小结
