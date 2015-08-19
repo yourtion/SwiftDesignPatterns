@@ -20,4 +20,4 @@
   * [如何使用备忘录模式](./Chapter09/Use-Memento.md)
   * [归档 - Archiving](./Chapter09/Archiving.md)
 * [最后的润色](./Chapter10/FinalTouches.md)
-* 小结
+* [小结](./Chapter11/Final.md)
