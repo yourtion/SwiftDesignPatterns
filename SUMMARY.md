@@ -1,5 +1,5 @@
 * [iOS 设计模式](./Chapter01/iOS-Design-Patterns.md)
-* [开始](./Chapter02/GettingStarted.md)
+* [入门 - 开始](./Chapter02/GettingStarted.md)
 * [设计模式之王 - MVC](./Chapter03/MVC.md)
   * [如何使用 MVC 模式](./Chapter03/Use-MVC.md)
 * [单例模式 - Singleton](./Chapter04/Singleton.md)
@@ -20,4 +20,6 @@
   * [如何使用备忘录模式](./Chapter09/Use-Memento.md)
   * [归档 - Archiving](./Chapter09/Archiving.md)
 * [最后的润色](./Chapter10/FinalTouches.md)
-* [小结](./Chapter11/Final.md)
+* [入门 - 小结](./Chapter11/Final.md)
+* 进阶学习 - 开始
+* 设计模式实现
