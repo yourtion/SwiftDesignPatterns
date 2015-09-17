@@ -23,8 +23,3 @@
 先来预览一下最终的结果：
 
 ![](../images/swiftDesignPattern1.png)
-
-## 进阶学习
-
-## 设计模式实现
-

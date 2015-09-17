@@ -2,7 +2,7 @@
 
 ## 整理排版说明
 
-参考英文原文：Update 04/22/2015 在`Xcode 6.4`中进行编码测试，解决原文中出现的问题，保证了语句与Demo的可用性
+在 `Xcode 7` 中进行编码测试，升级为 `Swift 2.0` 解决原文中出现的问题，保证了语句与Demo的可用性
 
 在线阅读: http://swift-design-patterns.books.yourtion.com/
 

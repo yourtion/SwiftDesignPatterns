@@ -21,5 +21,3 @@
   * [归档 - Archiving](./Chapter09/Archiving.md)
 * [最后的润色](./Chapter10/FinalTouches.md)
 * [入门 - 小结](./Chapter11/Final.md)
-* 进阶学习 - 开始
-* 设计模式实现
