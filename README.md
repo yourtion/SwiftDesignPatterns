@@ -10,7 +10,7 @@
 
 **有修改建议优化，请直接Fork：<https://github.com/yourtion/SwiftDesignPatterns/> 进行修改并申请 Pull Request。**
 
-项目Demo：https://github.com/yourtion/SwiftDesignPatterns-Demo
+项目Demo：https://github.com/yourtion/SwiftDesignPatterns-Demo1
 
 ## 更新声明
 

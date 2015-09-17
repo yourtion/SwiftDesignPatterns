@@ -1,6 +1,6 @@
 # 开始
 
-下载[初始项目](https://github.com/yourtion/SwiftDesignPatterns-Demo/archive/starter_project.zip)并解压，在 Xcode 中打开 `BlueLibrarySwift.xcodeproj` 项目文件。
+下载[初始项目](https://github.com/yourtion/SwiftDesignPatterns-Demo1/archive/starter_project.zip)并解压，在 Xcode 中打开 `BlueLibrarySwift.xcodeproj` 项目文件。
 
 项目中有三个地方需要注意一下：
 
@@ -64,8 +64,8 @@ override var description: String {
 在新建的类中添加两个属性：
 
 ```swift
-private let coverImage: UIImageView! 
-private let indicator: UIActivityIndicatorView!
+private var coverImage: UIImageView!
+private var indicator: UIActivityIndicatorView!
 ```
 
 `coverImage` 代表了封面的图片，`indicator` 则是在加载过程中显示的等待指示器。
@@ -76,8 +76,8 @@ private let indicator: UIActivityIndicatorView!
 接下来给这个类添加初始化化方法：
 
 ```swift
-required init(coder aDecoder: NSCoder) {
-    super.init(coder: aDecoder)
+required init?(coder aDecoder: NSCoder) {
+    super.init(coder: aDecoder)!
 }
 
 init(frame: CGRect, albumCover: String) {
@@ -100,7 +100,7 @@ init(frame: CGRect, albumCover: String) {
 最终我们再加上如下方法：
 
 ```swift
-func highlightAlbum(#didHighlightView: Bool) {
+func highlightAlbum(didHighlightView didHighlightView: Bool) {
     if didHighlightView == true {
         backgroundColor = UIColor.whiteColor()
     } else {
@@ -115,6 +115,6 @@ func highlightAlbum(#didHighlightView: Bool) {
 
 完成到这一步的Demo：
 
-- [查看源码](https://github.com/yourtion/SwiftDesignPatterns-Demo/tree/772747667a4aeabfdf437487981c2e95739cd584) 
-- [下载Zip](https://github.com/yourtion/SwiftDesignPatterns-Demo/archive/GettingStarted.zip)
+- [查看源码](https://github.com/yourtion/SwiftDesignPatterns-Demo1/tree/GettingStarted) 
+- [下载Zip](https://github.com/yourtion/SwiftDesignPatterns-Demo1/archive/GettingStarted.zip)
 
