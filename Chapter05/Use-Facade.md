@@ -66,3 +66,8 @@ func deleteAlbum(index: Int) {
 
 你需要在屏幕上展示专辑数据，这是就该用下一种设计模式了：装饰者模式。
 
+完成到这一步的Demo：
+
+- [查看源码](https://github.com/yourtion/SwiftDesignPatterns-Demo1/tree/Use-Facade) 
+- [下载Zip](https://github.com/yourtion/SwiftDesignPatterns-Demo1/archive/Use-Facade.zip)
+
