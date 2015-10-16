@@ -35,17 +35,22 @@ class var sharedInstance: LibraryAPI {
 
 在类变量里嵌套一个 `Singleton` 结构体。
 
-Singleton 封装了一个静态的常量，通过 static 定义意味着这个属性只存在一个，注意 Swift 中 static 的变量是延时加载的，意味着 Instance 直到需要的时候才会被创建。同时再注意一下，因为它是一个常量，所以一旦创建之后不会再创建第二次。这些就是单例模式的核心所在：一旦初始化完成，当前类存在一个实例对象，初始化方法就不会再被调用。
+`Singleton` 封装了一个静态的常量，通过 `static` 定义意味着这个属性只存在一个，注意 Swift 中 `static` 的变量是延时加载的，意味着 `Instance` 直到需要的时候才会被创建。
+
+同时再注意一下，因为它是一个常量，所以一旦创建之后不会再创建第二次。这些就是单例模式的核心所在：一旦初始化完成，当前类存在一个实例对象，初始化方法就不会再被调用。
 
 返回计算后的属性值。
 
-注意：更多的单例模式实例可以看看 Github 上的这个示例，列举了单例模式的若干种实现方式。
+注意：更多的单例模式实例可以看看 Github 上的[这个示例](https://github.com/hpique/SwiftSingleton)，列举了单例模式的若干种实现方式。
 
 你现在可以将这个单例作为专辑管理类的入口，接下来我们继续创建一个处理专辑数据持久化的类。
 
-新建 PersistencyManager.swift 并添加如下代码：
+新建 `PersistencyManager.swift` 并添加如下代码：
 
+```swift
 private var albums = [Album]()
+```
+
 在这里我们定义了一个私有属性，用来存储专辑数据。这是一个可变数组，所以你可以很容易的增加或者删除数据。
 
 然后加上一些初始化的数据：
@@ -114,4 +119,9 @@ func deleteAlbumAtIndex(index: Int) {
 这时你可以运行一下你的项目，确保编译通过以便进行下一步操作。
 
 此时你或许会感到好奇： `PersistencyManager` 好像不是单例啊？是的，它确实不是单例。不过没关系，在接下来的外观模式章节，你会看到 `LibraryAPI` 和 `PersistencyManagerx` 之间的联系。
+
+完成到这一步的Demo：
+
+- [查看源码](https://github.com/yourtion/SwiftDesignPatterns-Demo1/tree/Use-Singleton) 
+- [下载Zip](https://github.com/yourtion/SwiftDesignPatterns-Demo1/archive/Use-Singleton.zip)
 
