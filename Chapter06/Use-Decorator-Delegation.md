@@ -89,7 +89,7 @@ func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> In
 }
 
 func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-  var cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
+  let cell:UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
   if let albumData = currentAlbumData {
     cell.textLabel?.text = albumData.titles[indexPath.row]
       if let detailTextLabel = cell.detailTextLabel {
@@ -115,3 +115,9 @@ func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexP
 我们的原计划是在上面的空白处放一个可以横滑浏览专辑的视图。其实仔细想想，这个控件是可以应用在其他地方的，我们不妨把它做成一个可复用的视图。
 
 为了让这个视图可以复用，显示内容的工作都只能交给另一个对象来完成：它的委托。这个横滑页面应该声明一些方法让它的委托去实现，就像是 `UITableView` 的 `UITableViewDelegate` 一样。我们将会在下一个设计模式中实现这个功能。
+
+完成到这一步的Demo：
+
+- [查看源码](https://github.com/yourtion/SwiftDesignPatterns-Demo1/tree/Decorator) 
+- [下载Zip](https://github.com/yourtion/SwiftDesignPatterns-Demo1/archive/Decorator.zip)
+
