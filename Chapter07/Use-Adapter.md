@@ -79,7 +79,8 @@ func initializeScrollView() {
     addSubview(scroller)
 
     //2
-    scroller.setTranslatesAutoresizingMaskIntoConstraints(false)
+    scroller.translatesAutoresizingMaskIntoConstraints = false
+
     //3
     self.addConstraint(NSLayoutConstraint(item: scroller, attribute: .Leading, relatedBy: .Equal, toItem: self, attribute: .Leading, multiplier: 1.0, constant: 0.0))
     self.addConstraint(NSLayoutConstraint(item: scroller, attribute: .Trailing, relatedBy: .Equal, toItem: self, attribute: .Trailing, multiplier: 1.0, constant: 0.0))
@@ -341,3 +342,7 @@ reloadScroller()
 
 看起来好像很难的样子？别绝望，接下来我们会用观察者模式 (`Observer Pattern`) 解决这个问题！:]
 
+完成到这一步的Demo：
+
+- [查看源码](https://github.com/yourtion/SwiftDesignPatterns-Demo1/tree/Adapter) 
+- [下载Zip](https://github.com/yourtion/SwiftDesignPatterns-Demo1/archive/Adapter.zip)
