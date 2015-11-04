@@ -48,13 +48,12 @@ func saveImage(image: UIImage, filename: String) {
 }
 
 func getImage(filename: String) -> UIImage? {
-    var error: NSError?
     let path = NSHomeDirectory().stringByAppendingString("/Documents/\(filename)")
-    let data = NSData(contentsOfFile: path, options: .UncachedRead, error: &error)
-    if let unwrappedError = error {
+    do {
+        let data =  try NSData(contentsOfFile: path, options: .UncachedRead)
+        return UIImage(data: data)
+    } catch _ {
         return nil
-    } else {
-        return UIImage(data: data!)
     }
 }
 ```
@@ -66,17 +65,17 @@ func getImage(filename: String) -> UIImage? {
 ```swift
 func downloadImage(notification: NSNotification) {
     //1
-    let userInfo = notification.userInfo as [String: AnyObject]
-    var imageView = userInfo["imageView"] as UIImageView?
-    let coverUrl = userInfo["coverUrl"] as NSString
-
+    let userInfo = notification.userInfo as! [String: AnyObject]
+    let imageView = userInfo["imageView"] as! UIImageView?
+    let coverUrl = userInfo["coverUrl"] as! NSString
+    
     //2
     if let imageViewUnWrapped = imageView {
         imageViewUnWrapped.image = persistencyManager.getImage(coverUrl.lastPathComponent)
         if imageViewUnWrapped.image == nil {
             //3
             dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> Void in
-                let downloadedImage = self.httpClient.downloadImage(coverUrl)
+                let downloadedImage = self.httpClient.downloadImage(coverUrl as String)
                 //4
                 dispatch_sync(dispatch_get_main_queue(), { () -> Void in
                     imageViewUnWrapped.image = downloadedImage
@@ -97,10 +96,32 @@ func downloadImage(notification: NSNotification) {
 
 再回顾一下，我们使用外观模式隐藏了下载图片的复杂程度。通知的发送者并不在乎图片是如何从网上下载到本地的。
 
-运行一下项目，可以看到专辑封面已经显示出来了：
+如果你是 `Xcode 7` 和 iOS9 那么运行项目，程序会崩溃同时看到控制台有如下输出：
+
+    App Transport Security has blocked a cleartext HTTP (http://) resource load since it is insecure. Temporary exceptions can be configured via your app's Info.plist file.
+
+解决方法是如下（参考：[解决iOS9下blocked cleartext HTTP](http://blog.yourtion.com/ios9-http-blocked.html)）
+
+修改项目的 Info.plist 文件，增加以下内容：
+
+```xml
+<key>NSAppTransportSecurity</key>
+<dict>
+   <key>NSAllowsArbitraryLoads</key>
+   <true/>
+</dict>
+```
+
+现在运行一下项目，可以看到专辑封面已经显示出来了：
 
 ![](../images/notifications1.png)
 
 关了应用再重新运行，注意这次没有任何延时就显示了所有的图片，因为我们已经有了本地缓存。我们甚至可以在没有网络的情况下正常使用我们的应用。不过出了问题：这个用来提示加载网络请求的小菊花怎么一直在显示！
 
-我们在下载图片的时候开启了这个白色小菊花，但是在图片下载完毕的时候我们并没有停掉它。我们可以在每次下载成功的时候发送一个通知，但是我们不这样做，这次我们来用用另一个观察者模式： KVO 。
+我们在下载图片的时候开启了这个白色小菊花，但是在图片下载完毕的时候我们并没有停掉它。我们可以在每次下载成功的时候发送一个通知，但是我们不这样做，这次我们来用用另一个观察者模式： `KVO` 。
+
+完成到这一步的Demo：
+
+- [查看源码](https://github.com/yourtion/SwiftDesignPatterns-Demo1/tree/Notification) 
+- [下载Zip](https://github.com/yourtion/SwiftDesignPatterns-Demo1/archive/Notification.zip)
+
