@@ -9,7 +9,7 @@
 打开 `AlbumView.swift` 文件，找到 `init(frame:albumCover:)` 方法，在把 `coverImage` 添加到 `subView` 的代码后面添加如下代码：
 
 ```swift
-coverImage.addObserver(self, forKeyPath: "image", options: nil, context: nil)
+coverImage.addObserver(self, forKeyPath: "image", options: NSKeyValueObservingOptions([.New, .Old]), context: nil)
 ```
 
 这行代码把 `self` (也就是当前类) 添加到了 `coverImage` 的 `image` 属性的观察者里。
@@ -25,7 +25,7 @@ deinit {
 最终添加如下方法：
 
 ```swift
-override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject, change: [NSObject : AnyObject], context: UnsafeMutablePointer<Void>) {
+override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
     if keyPath == "image" {
         indicator.stopAnimating()
     }
@@ -45,4 +45,7 @@ override func observeValueForKeyPath(keyPath: String, ofObject object: AnyObject
 为了解决这个问题，我们可以使用下一种模式：备忘录模式。
 
 
+完成到这一步的Demo：
 
+- [查看源码](https://github.com/yourtion/SwiftDesignPatterns-Demo1/tree/KVO) 
+- [下载Zip](https://github.com/yourtion/SwiftDesignPatterns-Demo1/archive/KVO.zip)
