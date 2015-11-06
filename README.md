@@ -1,5 +1,13 @@
 # Swift设计模式 (iOS)
 
+我们将会通过完成一个完整的应用，展示音乐专辑和专辑的相关信息来学习设计模式在 Swift 中的实现。
+
+通过这个应用，我们会接触一些 Cocoa 中常见的设计模式：
+
+- 创建型 (Creational)：单例模式 (Singleton)
+- 结构型 (Structural)：MVC、装饰者模式 (Decorator)、适配器模式 (Adapter)、外观模式 (Facade)
+- 行为型 (Behavioral)：观察者模式 (Observer)、备忘录模式 (Memento)
+
 ## 整理排版说明
 
 在 `Xcode 7` 中进行编码测试，升级为 `Swift 2.0` 解决原文中出现的问题，保证了语句与Demo的可用性
