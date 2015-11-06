@@ -15,11 +15,11 @@ class Album: NSObject, NSCoding {
 ```swift
 required init(coder decoder: NSCoder) {
     super.init()
-    self.title = decoder.decodeObjectForKey("title") as String?
-    self.artist = decoder.decodeObjectForKey("artist") as String?
-    self.genre = decoder.decodeObjectForKey("genre") as String?
-    self.coverUrl = decoder.decodeObjectForKey("cover_url") as String?
-    self.year = decoder.decodeObjectForKey("year") as String?
+    self.title = decoder.decodeObjectForKey("title") as! String
+    self.artist = decoder.decodeObjectForKey("artist")as! String
+    self.genre = decoder.decodeObjectForKey("genre") as! String?
+    self.coverUrl = decoder.decodeObjectForKey("cover_url")as! String
+    self.year = decoder.decodeObjectForKey("year") as! String
 }
 
 func encodeWithCoder(aCoder: NSCoder) {
@@ -40,7 +40,7 @@ func encodeWithCoder(aCoder: NSCoder) {
 
 ```swift
 func saveAlbums() {
-    var filename = NSHomeDirectory().stringByAppendingString("/Documents/albums.bin")
+    let filename = NSHomeDirectory().stringByAppendingString("/Documents/albums.bin")
     let data = NSKeyedArchiver.archivedDataWithRootObject(albums)
     data.writeToFile(filename, atomically: true)
 } 
@@ -56,8 +56,8 @@ func saveAlbums() {
 override init() {
     super.init()
     if let data = NSData(contentsOfFile: NSHomeDirectory().stringByAppendingString("/Documents/albums.bin")) {
-        let unarchiveAlbums = NSKeyedUnarchiver.unarchiveObjectWithData(data) as [Album]?
-        if let unwrappedAlbum = unarchiveAlbums {
+        let unarchiveAlbums = NSKeyedUnarchiver.unarchiveObjectWithData(data) as! [Album]
+        if let unwrappedAlbum : [Album]  = unarchiveAlbums {
             albums = unwrappedAlbum
         }
     } else {
@@ -130,3 +130,9 @@ LibraryAPI.sharedInstance.saveAlbums()
 不幸的是似乎没什么简单的方法来检查归档是否正确完成。你可以检查一下 `Documents` 目录，看下是否存在归档文件。如果要查看其他数据变化的话，还需要添加编辑专辑数据的功能。
 
 不过和编辑数据相比，似乎加个删除专辑的功能更好一点，如果不想要这张专辑直接删除即可。再进一步，万一误删了话，是不是还可以再加个撤销按钮？
+
+
+完成到这一步的Demo：
+
+- [查看源码](https://github.com/yourtion/SwiftDesignPatterns-Demo1/tree/Archiving) 
+- [下载Zip](https://github.com/yourtion/SwiftDesignPatterns-Demo1/archive/Archiving.zip)
