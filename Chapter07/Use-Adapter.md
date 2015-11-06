@@ -76,6 +76,7 @@ required init(coder aDecoder: NSCoder) {
 func initializeScrollView() {
     //1
     scroller = UIScrollView()
+    scroller.delegate = self
     addSubview(scroller)
 
     //2
@@ -166,7 +167,8 @@ func reload() {
 
     // 8 - If an initial view is defined, center the scroller on it
     if let initialView = delegate.initialViewIndex?(self) {
-      scroller.setContentOffset(CGPointMake(CGFloat(initialView)*CGFloat((VIEW_DIMENSIONS + (2 * VIEW_PADDING))), 0), animated: true)
+        let xFinal = CGFloat(initialView) * CGFloat(VIEW_DIMENSIONS + (2*VIEW_PADDING)) - CGFloat(3*VIEW_PADDING)
+        scroller.setContentOffset(CGPointMake(xFinal, 0), animated: true)
     }
   }
 }
@@ -203,7 +205,7 @@ override func didMoveToSuperview() {
 func centerCurrentView() {
     var xFinal = scroller.contentOffset.x + CGFloat((VIEWS_OFFSET/2) + VIEW_PADDING)
     let viewIndex = xFinal / CGFloat((VIEW_DIMENSIONS + (2*VIEW_PADDING)))
-    xFinal = viewIndex * CGFloat(VIEW_DIMENSIONS + (2*VIEW_PADDING))
+    xFinal = viewIndex * CGFloat(VIEW_DIMENSIONS + (2*VIEW_PADDING)) - CGFloat(3*VIEW_PADDING)
     scroller.setContentOffset(CGPointMake(xFinal, 0), animated: true)
     if let delegate = self.delegate {
         delegate.horizontalScrollerClickedViewAtIndex(self, index: Int(viewIndex))
