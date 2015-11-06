@@ -41,20 +41,20 @@ func addAlbumAtIndex(album: Album,index: Int) {
 ```swift
 func deleteAlbum() {
     //1
-    var deletedAlbum : Album = allAlbums[currentAlbumIndex]
+    let deletedAlbum : Album = allAlbums[currentAlbumIndex]
     //2
-    var undoAction = (deletedAlbum, currentAlbumIndex)
+    let undoAction = (deletedAlbum, currentAlbumIndex)
     undoStack.insert(undoAction, atIndex: 0)
     //3
     LibraryAPI.sharedInstance.deleteAlbum(currentAlbumIndex)
     reloadScroller()
     //4
-    let barButtonItems = toolbar.items as [UIBarButtonItem]
-    var undoButton : UIBarButtonItem = barButtonItems[0]
+    let barButtonItems = toolbar.items! as [UIBarButtonItem]
+    let undoButton : UIBarButtonItem = barButtonItems[0]
     undoButton.enabled = true
     //5
     if (allAlbums.count == 0) {
-        var trashButton : UIBarButtonItem = barButtonItems[2]
+        let trashButton : UIBarButtonItem = barButtonItems[2]
         trashButton.enabled = false
     }
 }
@@ -72,7 +72,7 @@ func deleteAlbum() {
 
 ```swift
 func undoAction() {
-    let barButtonItems = toolbar.items as [UIBarButtonItem]
+    let barButtonItems = toolbar.items! as [UIBarButtonItem]
     //1       
     if undoStack.count > 0 {
         let (deletedAlbum, index) = undoStack.removeAtIndex(0)
@@ -80,7 +80,7 @@ func undoAction() {
     }
     //2       
     if undoStack.count == 0 {
-        var undoButton : UIBarButtonItem = barButtonItems[0]
+        let undoButton : UIBarButtonItem = barButtonItems[0]
         undoButton.enabled = false
     }
     //3       
@@ -102,3 +102,8 @@ func undoAction() {
 我们也可以趁机测试一下，看看是否及时存储了专辑数据的变化。比如删除一个专辑，然后切到后台，强关应用，再重新开启，看看是不是删除操作成功保存了。
 
 如果想要恢复所有数据，删除应用然后重新安装即可。
+
+完成到这一步的Demo：
+
+- [查看源码](https://github.com/yourtion/SwiftDesignPatterns-Demo1/tree/FinalTouches) 
+- [下载Zip](https://github.com/yourtion/SwiftDesignPatterns-Demo1/archive/FinalTouches.zip)
