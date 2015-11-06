@@ -29,7 +29,7 @@ loadPreviousState()
 
 这样在刚初始化的时候就加载了上次存储的状态。但是什么时候存储当前状态呢？这个时候我们可以用通知来做。在应用进入到后台的时候， iOS 会发送一个 `UIApplicationDidEnterBackgroundNotification` 的通知，我们可以在这个通知里调用 `saveCurrentState` 这个方法。是不是很方便？
 
-在 `viewDidLoa` 的最后加上如下代码：
+在 `viewDidLoad` 的最后加上如下代码：
 
 ```swift
 NSNotificationCenter.defaultCenter().addObserver(self, selector:"saveCurrentState", name: UIApplicationDidEnterBackgroundNotification, object: nil)
@@ -74,4 +74,9 @@ func initialViewIndex(scroller: HorizontalScroller) -> Int {
 一种方案是遍历 Album 的属性然后把它们写到一个 `plist` 文件里，然后如果需要的时候再重新创建 `Album` 对象。这并不是最好的选择，因为数据和属性不同，你的代码也就要相应的产生变化。举个例子，如果我们以后想添加 `Movie` 对象，它有着完全不同的属性，那么存储和读取数据又需要重写新的代码。
 
 况且你也无法存储这些对象的私有属性，因为其他类是没有访问权限的。这也就是为什么 Apple 提供了 归档 的机制。
+
+完成到这一步的Demo：
+
+- [查看源码](https://github.com/yourtion/SwiftDesignPatterns-Demo1/tree/Memento) 
+- [下载Zip](https://github.com/yourtion/SwiftDesignPatterns-Demo1/archive/Memento.zip)
 
