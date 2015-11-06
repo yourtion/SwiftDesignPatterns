@@ -1,6 +1,6 @@
 # 小结
 
-最终项目的源代码可以在 [BlueLibrarySwift-Final](http://cdn2.raywenderlich.com/wp-content/uploads/2014/12/BlueLibrarySwift-Final.zip) 下载。
+最终项目的源代码可以在 [BlueLibrarySwift-Final](https://github.com/yourtion/SwiftDesignPatterns-Demo1/archive/Final.zip) 下载。
 
 通过这两篇设计模式的学习，我们接触到了一些基础的设计模式和概念：`Singleton` 、`MVC` 、`Delegation` 、`Protocols` 、`Facade` 、`Observer` 、`Memento` 。
 
