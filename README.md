@@ -8,7 +8,9 @@
 
 下载电子书: https://www.gitbook.com/book/yourtion/swiftdesignpatterns/details
 
-**有修改建议优化，请直接Fork：<https://github.com/yourtion/SwiftDesignPatterns/> 进行修改并申请 Pull Request。**
+直接下载：[PDF](https://www.gitbook.com/download/pdf/book/yourtion/swiftdesignpatterns)、[EPub](https://www.gitbook.com/download/epub/book/yourtion/swiftdesignpatterns)、[Mobi](https://www.gitbook.com/download/mobi/book/yourtion/swiftdesignpatterns)
+
+**有修改建议优化请[提交Issus](https://github.com/yourtion/SwiftDesignPatterns/issues/new)，或请直接Fork：<https://github.com/yourtion/SwiftDesignPatterns/> 进行修改并申请 Pull Request。**
 
 项目Demo：https://github.com/yourtion/SwiftDesignPatterns-Demo1
 
