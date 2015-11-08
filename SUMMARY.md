@@ -21,3 +21,5 @@
   * [归档 - Archiving](./Chapter09/Archiving.md)
 * [最后的润色](./Chapter10/FinalTouches.md)
 * [入门 - 小结](./Chapter11/Final.md)
+* [进阶 - 简介](./Chapter12/Intermediate.md)
+  * [进阶 - 开始](./Chapter12/GettingStarted.md)
